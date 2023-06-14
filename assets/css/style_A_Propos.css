@@ -1,0 +1,12 @@
+#section1 {
+  position: relative;
+}
+
+#section1 img {
+  height: 223px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 25px;
+  margin-block: 2rem;
+  filter: brightness(70%);
+}
