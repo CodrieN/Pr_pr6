@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
+import "./index.scss";
 import Home from "./pages/Home/Home";
 import APropos from "./pages/APropos/APropos";
 import Location from "./pages/Location/Location";
@@ -12,8 +12,8 @@ import Header from "./components/Header/Header";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-  <Header />
     <BrowserRouter>
+    <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/apropos" element={<APropos />} />
@@ -22,5 +22,6 @@ root.render(
       </Routes>
     </BrowserRouter>
     <Footer />
+
   </React.StrictMode>
 );

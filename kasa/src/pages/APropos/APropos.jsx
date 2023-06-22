@@ -1,3 +1,5 @@
+import './APropos.scss';
+
 function APropos() {
   return (
     <section id="section1">

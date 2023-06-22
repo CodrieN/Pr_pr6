@@ -1,3 +1,5 @@
+import './NotFound.scss';
+
 function NotFound() {
   return (
     <section>

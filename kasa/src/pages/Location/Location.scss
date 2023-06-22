@@ -1,0 +1,24 @@
+#section1 {
+    position: relative;
+  
+    img {
+      height: 223px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 25px;
+      margin-block: 2rem;
+      filter: brightness(70%);
+    }
+  
+    div {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 40px;
+      font-weight: 700;
+      text-align: center;
+    }
+  }
+  

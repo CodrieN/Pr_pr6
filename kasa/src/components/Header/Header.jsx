@@ -1,4 +1,6 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
+import './Header.scss';
 
 function Header() {
   return (
@@ -9,8 +11,8 @@ function Header() {
           sa
         </h1>
         <div>
-          <a href="./index.html">Acceuil</a>
-          <a href="./A_Propos.html">A Propos</a>
+          <Link to="/">Accueil</Link>
+          <Link to="/apropos">A Propos</Link>
         </div>
       </nav>
     </header>
@@ -18,4 +20,4 @@ function Header() {
 }
 export default Header;
 
-// todo modifier les links pour qu'ils fonctionnent avec react router dom
+

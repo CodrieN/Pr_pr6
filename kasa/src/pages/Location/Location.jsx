@@ -1,3 +1,5 @@
+import './Location.scss';
+
 function Location() {
   return (
     <section>

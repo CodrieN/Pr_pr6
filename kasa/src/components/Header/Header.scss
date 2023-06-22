@@ -1,0 +1,19 @@
+$primary-rgb: 255 96 96;
+h1 {
+  font-size: 100px;
+}
+nav {
+  color: rgb($primary-rgb);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30px;
+
+  a {
+    margin-inline: 3rem;
+
+    &:hover {
+      border-bottom: 2px solid rgb($primary-rgb);
+    }
+  }
+}
