@@ -1,15 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './Header.scss';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Header.scss";
 
 function Header() {
   return (
     <header>
       <nav>
-        <h1>
-          K<img alt="" src="img/Kasa.jpg" width="50" />
-          sa
-        </h1>
+      <Link to="/" className="logo-link">
+          <h1>
+            K<img alt="" src="img/Kasa.jpg" width="50" />
+            sa
+          </h1>
+        </Link>
         <div>
           <Link to="/">Accueil</Link>
           <Link to="/apropos">A Propos</Link>
@@ -19,5 +21,3 @@ function Header() {
   );
 }
 export default Header;
-
-
