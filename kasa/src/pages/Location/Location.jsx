@@ -1,57 +1,72 @@
-import React from "react";
-import './Location.scss';
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import "./Location.scss";
 
 function Location() {
+  const [logement, setLogement] = useState({});
+  const { id } = useParams();
+
+  useEffect(() => {
+    fetch("/logements.json")
+      .then((response) => response.json())
+      .then((data) => {
+        const selectedLogement = data.find((logement) => logement.id === id);
+        setLogement(selectedLogement || {}); // Assign an empty object if logement is not found
+      })
+      .catch((error) => {
+        console.error("Error fetching logements:", error);
+      });
+  }, [id]);
+
+  if (!logement || !logement.host) {
+    return <div>Loading...</div>;
+  }
+
+  const { title, cover, host, tags, location, rating, description, equipments } = logement;
+
   return (
     <section>
-    <img src="assets/img/Background.png" alt="flatPicture" />
-    <div>
-      <span>Cozy loft on the Canal Saint-Martin</span>
+      <img src={cover} alt="flatPicture" />
       <div>
-        <div>Alexandre Dumas</div>
-        <div><img src="assets/img/Host.png" alt="hostPicture" /></div>
-      </div>
-    </div>
-    <div>
-      <div>
-        <div>Cozy</div>
-        <div>Canal</div>
-        <div>Paris 10</div>
-      </div>
-      <div>
-        <i class="fa-solid fa-star ic_blue"></i>
-        <i class="fa-solid fa-star ic_blue"></i>
-        <i class="fa-solid fa-star ic_blue"></i>
-        <i class="fa-solid fa-star ic_blue"></i>
-        <i class="fa-solid fa-star ic_grey"></i>
-      </div>
-    </div>
-    <div>
-      <div>
-        <span>Description</span>
+        <span>{title}</span>
         <div>
-          Vous serez à 50m du canal Saint-martin où vous pourrez pique-niquer
-          l'été et à côté de nombreux bars et restaurants. Au cœur de Paris
-          avec S lignes de métro et de nombreux bus. Logement parfait pour les
-          voyageurs en solo et les voyageurs d'affaires. Vous êtes à 1 station
-          de la gare de l'est (7 minutes à pied).
+          <div>{host.name}</div>
+          <div>
+            <img src={host.picture} alt="hostPicture" />
+          </div>
         </div>
       </div>
       <div>
-        <span>Equipements</span>
-        <ul>
-          <li>Climatisation</li>
-          <li>Wi-Fi</li>
-          <li>Cuisine</li>
-          <li>Espace de travail</li>
-          <li>Fer à repasser</li>
-          <li>Sèche-cheveux</li>
-          <li>Cintres</li>
-        </ul>
+        <div>
+          <div>{tags.join(", ")}</div>
+          <div>{location}</div>
+          <div>{rating} stars</div>
+        </div>
+        <div>
+          {Array.from({ length: rating }, (_, index) => (
+            <i key={index} className="fa-solid fa-star ic_blue"></i>
+          ))}
+          {Array.from({ length: 5 - rating }, (_, index) => (
+            <i key={index} className="fa-solid fa-star ic_grey"></i>
+          ))}
+        </div>
       </div>
-      <div></div>
-    </div>
-  </section>
+      <div>
+        <div>
+          <span>Description</span>
+          <div>{description}</div>
+        </div>
+        <div>
+          <span>Equipements</span>
+          <ul>
+            {equipments.map((equipment, index) => (
+              <li key={index}>{equipment}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
   );
 }
+
 export default Location;

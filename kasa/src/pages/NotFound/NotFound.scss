@@ -6,13 +6,23 @@ section {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  
+
   div {
     color: rgb($primary-rgb);
     font-size: 40px;
     margin-block-end: 3rem;
   }
+  .linkToHome {
+    color: rgb($primary-rgb);
+    font-size: 20px;
+    margin-block-end: 3rem;
+    &:hover {
+      border-bottom: 2px solid rgb($primary-rgb);
+    }
+  }
 }
+
+// ! le hoverffect pousse le footer vers le bas ! à changer !
 
 #_404 {
   font-size: 400px;
