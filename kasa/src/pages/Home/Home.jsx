@@ -1,5 +1,5 @@
 import Gallery from "./../../components/Gallery/Gallery";
-
+import "./Home.scss";
 function Home() {
   return (
     <>

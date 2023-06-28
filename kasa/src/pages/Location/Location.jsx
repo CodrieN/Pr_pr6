@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "./Location.scss";
+import Collapse from "../../components/Collapse/Collapse";
 
 function Location() {
   const [logement, setLogement] = useState({});
@@ -19,50 +22,67 @@ function Location() {
   }, [id]);
 
   if (!logement || !logement.host) {
-    return <div>Loading...</div>;
+    return <div>Chargement...</div>;
   }
 
-  const { title, cover, host, tags, location, rating, description, equipments } = logement;
+  const {
+    title,
+    cover,
+    host,
+    tags,
+    location,
+    rating,
+    description,
+    equipments,
+  } = logement;
 
   return (
-    <section>
-      <img src={cover} alt="flatPicture" />
-      <div>
-        <span>{title}</span>
-        <div>
-          <div>{host.name}</div>
+    <section id="logementSection">
+      <img id="LogementCover" src={cover} alt="flatPicture" />
+      <div id="div1">
+        <span id="logementTitle">{title}</span>
+        <div id="logementHost">
+          <div id="logementHostName">{host.name}</div>
           <div>
             <img src={host.picture} alt="hostPicture" />
           </div>
         </div>
       </div>
-      <div>
-        <div>
-          <div>{tags.join(", ")}</div>
-          <div>{location}</div>
-          <div>{rating} stars</div>
-        </div>
-        <div>
-          {Array.from({ length: rating }, (_, index) => (
-            <i key={index} className="fa-solid fa-star ic_blue"></i>
+      <div id="logementLocation">{location}</div>
+      <div id="div2">
+        <div id="tags">
+          {tags.map((tag, index) => (
+            <span className="tag" key={index}>
+              {tag}
+            </span>
           ))}
-          {Array.from({ length: 5 - rating }, (_, index) => (
-            <i key={index} className="fa-solid fa-star ic_grey"></i>
+        </div>
+        <div id="logementStars">
+          {Array.from({ length: 5 }, (_, index) => (
+            <FontAwesomeIcon
+              key={index}
+              icon={index < rating ? faStar : faStar}
+              className={index < rating ? "ic_pink" : "ic_grey"}
+            />
           ))}
         </div>
       </div>
-      <div>
+      <div id="logementCollapse">
         <div>
-          <span>Description</span>
-          <div>{description}</div>
+          <Collapse className="collapse">
+            <span>Description</span>
+            <div>{description}</div>
+          </Collapse>
         </div>
         <div>
-          <span>Equipements</span>
-          <ul>
-            {equipments.map((equipment, index) => (
-              <li key={index}>{equipment}</li>
-            ))}
-          </ul>
+          <Collapse className="collapse">
+            <span>Equipements</span>
+            <ul>
+              {equipments.map((equipment, index) => (
+                <li key={index}>{equipment}</li>
+              ))}
+            </ul>
+          </Collapse>
         </div>
       </div>
     </section>

@@ -1,29 +1,34 @@
 $primary-rgb: 255 96 96;
 
-section {
+#nfSection {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
 
-  div {
+  #_404 {
     color: rgb($primary-rgb);
-    font-size: 40px;
-    margin-block-end: 3rem;
+    font-size: 400px;
+    margin-block: 3rem;
+font-weight: 700;
+
   }
   .linkToHome {
     color: rgb($primary-rgb);
     font-size: 20px;
-    margin-block-end: 3rem;
+    margin-block: 7rem;
     &:hover {
       border-bottom: 2px solid rgb($primary-rgb);
     }
   }
 }
 
+#Oups {
+  color: rgb($primary-rgb);
+  font-size: 50px;
+  margin-block: 1rem;
+}
+
 // ! le hoverffect pousse le footer vers le bas ! à changer !
 
-#_404 {
-  font-size: 400px;
-}

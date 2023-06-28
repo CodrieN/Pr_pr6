@@ -11,7 +11,7 @@ const Collapse = ({ title, children }) => {
   };
 
   return (
-    <div>
+    <div id="divColapse">
       <button onClick={toggle}>
         <p>{title}</p>
         <p id="chevron">

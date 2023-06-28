@@ -1,33 +1,12 @@
 .Gallery {
   width: 100%;
   display: grid;
-  grid-template-rows: auto auto; 
-  grid-template-columns: repeat(3, 1fr); 
-  grid-gap: 0px; 
-  justify-content: center; 
+  grid-template-rows: auto auto;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0px;
+  justify-content: center;
   align-items: center;
   background-color: rgba(246, 246, 246, 1);
   border-radius: 25px;
-  justify-items: center
-}
-.Card {
-  width: 370px;
-  color: white;
-  height: 370px;
-  padding: 10px;
-  margin-block: 50px;
-  display: flex;
-  align-items: flex-end;
-  background: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(0, 0, 0, 0.5) 100%
-  );
-  border-radius: 10px;
-  img {
-    object-fit: cover;
-    width: 350px;
-    height: 350px;
-    
-  }
+  justify-items: center;
 }
