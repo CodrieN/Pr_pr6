@@ -4,25 +4,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "./Location.scss";
 import Collapse from "../../components/Collapse/Collapse";
+import { Navigate } from "react-router-dom";
 
 function Location() {
-  const [logement, setLogement] = useState({});
+  const [logement, setLogement] = useState();
   const { id } = useParams();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     fetch("/logements.json")
       .then((response) => response.json())
       .then((data) => {
         const selectedLogement = data.find((logement) => logement.id === id);
-        setLogement(selectedLogement || {}); // Assign an empty object if logement is not found
+        setLoading(false);
+        setLogement(selectedLogement);
       })
       .catch((error) => {
         console.error("Error fetching logements:", error);
       });
   }, [id]);
 
-  if (!logement || !logement.host) {
+  if (loading) {
     return <div>Chargement...</div>;
+  } else if (logement == undefined) {
+    return <Navigate to="/not-found" />;
   }
 
   const {

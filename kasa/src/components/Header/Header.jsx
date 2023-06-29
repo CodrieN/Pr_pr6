@@ -1,23 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Header.scss";
 
 function Header() {
+  const logo = "img/Kasa.jpg";
   return (
     <header>
       <nav>
-      <Link to="/" className="logo-link">
+        <NavLink exact to="/" className="logo-link">
           <h1>
-            K<img alt="" src="img/Kasa.jpg" width="50" />
+            K<img alt="" src={logo} width="50" />
             sa
           </h1>
-        </Link>
+        </NavLink>
         <div>
-          <Link to="/">Accueil</Link>
-          <Link to="/apropos">A Propos</Link>
+          <NavLink exact to="/" activeClassName="active-link">
+            Accueil
+          </NavLink>
+          <NavLink exact to="/apropos" activeClassName="active-link">
+            A Propos
+          </NavLink>
         </div>
       </nav>
     </header>
   );
 }
+
 export default Header;
