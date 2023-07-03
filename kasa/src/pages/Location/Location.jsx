@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Location.scss";
 import Collapse from "../../components/Collapse/Collapse";
+import Banner from "./../../components/Banner/Banner";
 import { Navigate } from "react-router-dom";
 
 function Location() {
@@ -41,7 +42,7 @@ function Location() {
 
   return (
     <section id="logementSection">
-      <img id="LogementCover" src={cover} alt="flatPicture" />
+      <Banner imgSrc={cover} imgId="LogementCover" imgAlt="" />
       <div id="div1">
         <span id="logementTitle">{title}</span>
         <div id="logementHost">
@@ -75,14 +76,12 @@ function Location() {
       </div>
       <div id="logementCollapse">
         <div>
-          <Collapse className="collapse">
-            <span>Description</span>
+          <Collapse title="Description" className="collapse">
             <div>{description}</div>
           </Collapse>
         </div>
         <div>
-          <Collapse className="collapse">
-            <span>Equipements</span>
+          <Collapse title="Equipements" className="collapse">
             <ul>
               {equipments.map((equipment, index) => (
                 <li key={index}>{equipment}</li>

@@ -1,9 +1,10 @@
-#divColapse{
+#divCollapse {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-
+  position: relative;
 }
+
 
 button {
   display: flex;
@@ -16,7 +17,7 @@ button {
   border-radius: 20px;
   color: white;
   font-size: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
 
   p {
     padding: 10px;
@@ -28,43 +29,68 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.5s ease-in-out;
+  transform: rotate(0deg);
 }
 
-.rotate {
-  transition: transform 0.3s ease-in-out;
+#chevron.rotate {
   transform: rotate(-180deg);
 }
-
 .divCol {
   padding: 1rem;
+  padding-top: 2rem;
   font-size: x-large;
   display: flex;
   width: 1023px;
   background-color: rgba(246, 246, 246, 1);
+  overflow: hidden;
+  color: rgba(255, 96, 96, 1);
+  animation: slideInAnimation 0.5s forwards;
+  z-index: -1;
+
+  .hidden {
+    display: none;
+  }
 }
 
-.slide-in {
-  animation: slideInAnimation 0.3s forwards;
-}
+// .slide-in {
+  // animation-delay: 0.2s;
+// }
 
 .slide-out {
-  animation: slideOutAnimation 0.3s forwards;
+  animation: slideOutAnimation 0.5s forwards;
 }
+
+// .children {
+//   animation: slideInAnimation 0.1s forwards;
+//   animation-delay: 0.3s;
+// }
 
 @keyframes slideInAnimation {
   0% {
     transform: translateY(-100%);
+    opacity: 0;
+  }
+  0% {
+    transform: translateY(-50%);
+    opacity: 0;
   }
   100% {
     transform: translateY(0);
+    opacity: 1;
   }
 }
 
 @keyframes slideOutAnimation {
   0% {
     transform: translateY(0);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
   }
   100% {
     transform: translateY(-100%);
+    opacity: 0;
   }
 }

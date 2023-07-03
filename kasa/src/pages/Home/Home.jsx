@@ -1,16 +1,24 @@
+import React from "react";
 import Gallery from "./../../components/Gallery/Gallery";
+import Banner from "./../../components/Banner/Banner";
 import "./Home.scss";
+
 function Home() {
   return (
     <>
       <section id="section1">
-        <img id="img0" alt="plage" src="img/Plage.png" />
-        <div id="partout">Chez vous, partout et ailleurs</div>
+        <Banner
+          imgSrc="/img/Plage.png"
+          imgId="img0"
+          imgAlt="Plage"
+          partoutText="Chez vous, partout et ailleurs"
+        />
       </section>
       <section id="section2">
-      <Gallery />
+        <Gallery />
       </section>
     </>
   );
 }
+
 export default Home;

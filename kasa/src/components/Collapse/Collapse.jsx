@@ -12,13 +12,13 @@ const Collapse = ({ title, children }) => {
     <div id="divCollapse">
       <button onClick={toggle}>
         <p>{title}</p>
-        <p id="chevron">
-          <i className={`fa-solid fa-chevron-${open ? 'up' : 'down'}`}></i>
+        <p id="chevron" className={open ? "rotate" : ""}>
+          <i className={`fa-solid fa-chevron-up`}></i>{" "}
         </p>
       </button>
       {open && (
         <div className={`divCol ${open ? "slide-in" : "slide-out"}`}>
-          {children}
+          <div className="children">{children}</div>
         </div>
       )}
     </div>
