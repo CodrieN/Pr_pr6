@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-solid-svg-icons";
 import "./Location.scss";
 import Collapse from "../../components/Collapse/Collapse";
 import { Navigate } from "react-router-dom";
@@ -64,11 +62,14 @@ function Location() {
         </div>
         <div id="logementStars">
           {Array.from({ length: 5 }, (_, index) => (
-            <FontAwesomeIcon
+            <i
               key={index}
-              icon={index < rating ? faStar : faStar}
-              className={index < rating ? "ic_pink" : "ic_grey"}
-            />
+              className={
+                index < rating
+                  ? "fa-solid fa-star ic_pink"
+                  : "fa-solid fa-star ic_grey"
+              }
+            ></i>
           ))}
         </div>
       </div>

@@ -1,9 +1,10 @@
 $primary-rgb: 255 96 96;
-h1 {
-  font-size: 100px;
-
-  img {
-    margin-inline: 10px;
+.logo-link {
+  h1 {
+    font-size: 100px;
+    img {
+      margin-inline: 10px;
+    }
   }
 }
 
@@ -15,17 +16,17 @@ nav {
   font-size: 30px;
   margin-top: 2rem;
 
-  .logo-link {
-    &:hover {
-      border-bottom: none; // Remove the hover effect for the first Link
-    }
+  .divNav {
+    display: flex;
+    gap: 3rem; /* Add the gap property here */
+    padding-left: 3rem;
   }
 
-  a {
-    margin-inline: 3rem;
+  .logo-link.active {
+    border-bottom: none;
+  }
 
-    &:hover {
-      border-bottom: 2px solid rgb($primary-rgb);
-    }
+  .active {
+    border-bottom: 2px solid rgb($primary-rgb);
   }
 }

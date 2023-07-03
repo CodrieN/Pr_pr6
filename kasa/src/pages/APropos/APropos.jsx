@@ -6,7 +6,7 @@ function APropos() {
   return (
     <section id="sectionAP">
       <img alt="" src="img/Montagnes.png" id="imgAProppos" />
-      <div>
+      <div id="sAPDiv">
         <Collapse title="Fiabilité" className="collapse">
           Les annonces postées sur Kasa garantissent une fiabilité totale. Les
           photos sont conformes aux logements, et toutes les informations sont

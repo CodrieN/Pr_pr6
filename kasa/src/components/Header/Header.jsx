@@ -13,7 +13,7 @@ function Header() {
             sa
           </h1>
         </NavLink>
-        <div>
+        <div className="divNav">
           <NavLink exact to="/" activeClassName="active-link">
             Accueil
           </NavLink>
