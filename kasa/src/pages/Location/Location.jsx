@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./Location.scss";
 import Collapse from "../../components/Collapse/Collapse";
-import Banner from "./../../components/Banner/Banner";
 import { Navigate } from "react-router-dom";
+import Slideshow from "../../components/Slideshow/Slideshow";
 
 function Location() {
   const [logement, setLogement] = useState();
@@ -25,24 +25,24 @@ function Location() {
 
   if (loading) {
     return <div>Chargement...</div>;
-  } else if (logement == undefined) {
+  } else if (logement === undefined) {
     return <Navigate to="/not-found" />;
   }
 
   const {
     title,
-    cover,
     host,
     tags,
     location,
     rating,
     description,
     equipments,
+    pictures,
   } = logement;
 
   return (
     <section id="logementSection">
-      <Banner imgSrc={cover} imgId="LogementCover" imgAlt="" />
+      <Slideshow pictures={pictures} />
       <div id="div1">
         <span id="logementTitle">{title}</span>
         <div id="logementHost">
