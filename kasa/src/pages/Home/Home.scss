@@ -21,3 +21,16 @@
     text-align: center;
   }
   
+  @media (max-width: 480px) {
+    #section1 {
+      #img0 {
+        height: 110px;
+
+      }
+    }
+    #partout {
+      font-size: 20px;
+      left: 35%;
+      text-align: initial;
+    }
+  }

@@ -18,9 +18,7 @@ font-weight: 700;
     color: rgb($primary-rgb);
     font-size: 20px;
     margin-block: 7rem;
-    &:hover {
-      border-bottom: 2px solid rgb($primary-rgb);
-    }
+    border-bottom: 2px solid rgb($primary-rgb);
   }
 }
 
@@ -30,5 +28,17 @@ font-weight: 700;
   margin-block: 1rem;
 }
 
-// ! le hoverffect pousse le footer vers le bas ! à changer !
-
+@media (max-width: 480px) {
+  #nfSection {
+    #_404 {
+      font-size: 200px;
+    }
+    .linkToHome {
+      font-size: 15px;
+      margin-block: 3rem;
+    }
+  }
+  #Oups {
+    font-size: 30px;
+  }
+}

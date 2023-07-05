@@ -9,8 +9,8 @@ function Header() {
       <nav>
         <NavLink exact to="/" className="logo-link">
           <h1>
-            K<img alt="" src={logo} width="50" />
-            sa
+            <span>K</span><img alt="" src={logo} width="50" />
+            <span>sa</span>
           </h1>
         </NavLink>
         <div className="divNav">

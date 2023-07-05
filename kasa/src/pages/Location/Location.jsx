@@ -43,35 +43,41 @@ function Location() {
   return (
     <section id="logementSection">
       <Slideshow pictures={pictures} />
-      <div id="div1">
-        <span id="logementTitle">{title}</span>
-        <div id="logementHost">
-          <div id="logementHostName">{host.name}</div>
-          <div>
-            <img src={host.picture} alt="hostPicture" />
+      <div id="divInit">
+        <div id="div1">
+          <div id="logementLocation">
+            {" "}
+            <span id="logementTitle">{title}</span>
+            {location}
+          </div>
+          <div id="logementHost">
+            <div id="logementHostName">{host.name}</div>
+            <div>
+              <img src={host.picture} alt="hostPicture" />
+            </div>
           </div>
         </div>
-      </div>
-      <div id="logementLocation">{location}</div>
-      <div id="div2">
-        <div id="tags">
-          {tags.map((tag, index) => (
-            <span className="tag" key={index}>
-              {tag}
-            </span>
-          ))}
-        </div>
-        <div id="logementStars">
-          {Array.from({ length: 5 }, (_, index) => (
-            <i
-              key={index}
-              className={
-                index < rating
-                  ? "fa-solid fa-star ic_pink"
-                  : "fa-solid fa-star ic_grey"
-              }
-            ></i>
-          ))}
+
+        <div id="div2">
+          <div id="tags">
+            {tags.map((tag, index) => (
+              <span className="tag" key={index}>
+                {tag}
+              </span>
+            ))}
+          </div>
+          <div id="logementStars">
+            {Array.from({ length: 5 }, (_, index) => (
+              <i
+                key={index}
+                className={
+                  index < rating
+                    ? "fa-solid fa-star ic_pink"
+                    : "fa-solid fa-star ic_grey"
+                }
+              ></i>
+            ))}
+          </div>
         </div>
       </div>
       <div id="logementCollapse">

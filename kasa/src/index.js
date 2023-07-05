@@ -9,10 +9,12 @@ import Router from "./components/Router/Router";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Header />
-      <Router />
-    </BrowserRouter>
-    <Footer />
+    <div id="Flex">
+      <BrowserRouter>
+        <Header />
+        <Router />
+      </BrowserRouter>
+      <Footer />
+    </div>
   </React.StrictMode>
 );

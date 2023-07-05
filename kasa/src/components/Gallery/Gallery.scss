@@ -1,12 +1,21 @@
 .Gallery {
   width: 100%;
-  display: grid;
-  grid-template-rows: auto auto;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 0px;
-  justify-content: center;
-  align-items: center;
+  display: flex;
+  justify-items: center;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   background-color: rgba(246, 246, 246, 1);
   border-radius: 25px;
-  justify-items: center;
+  padding-block: 50px;
+}
+
+
+
+@media (max-width: 480px) {
+  .Gallery {
+    padding-block: 20px;
+    background-color: rgb(255, 255, 255);
+    flex-direction: column;
+
+  }
 }

@@ -11,6 +11,7 @@ function APropos() {
         imgId="bannerImageAPropos"
         imgAlt="Montagnes"
       />
+      <div id="collapsWrapper">
       <Collapse title="Fiabilité" className="collapse">
         Les annonces postées sur Kasa garantissent une fiabilité totale. Les
         photos sont conformes aux logements, et toutes les informations sont
@@ -34,6 +35,7 @@ function APropos() {
         bien respectés. Nous organisons également des ateliers sur la sécurité
         domestique pour nos hôtes.
       </Collapse>
+      </div>
     </section>
   );
 }

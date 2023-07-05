@@ -102,7 +102,7 @@ menu,
 nav,
 section {
   display: block;
-  width: 1440px;
+  max-width: 1440px;
 }
 
 :root {
@@ -122,7 +122,6 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  align-items: center;
   max-width: 1440px;
   margin: auto;
   padding-left: 55px;
@@ -130,6 +129,7 @@ body {
   background-color: rgb(255, 255, 255);
   font-family: "Raleway", sans-serif;
 }
+
 
 a {
   text-decoration: none;
@@ -153,4 +153,19 @@ a:active {
 
 a {
   color: inherit;
+}
+
+#Flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
 }

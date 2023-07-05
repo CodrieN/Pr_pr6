@@ -1,5 +1,6 @@
 #divCollapse {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
   position: relative;
@@ -10,7 +11,7 @@ button {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1023px;
+  width: 70%;
   height: 80px;
   background-color: rgba(255, 96, 96, 1);
   border: none;
@@ -41,7 +42,7 @@ button {
   padding-top: 2rem;
   font-size: x-large;
   display: flex;
-  width: 1023px;
+  width: 70%;
   background-color: rgba(246, 246, 246, 1);
   overflow: hidden;
   color: rgba(255, 96, 96, 1);
