@@ -57,7 +57,6 @@ function Location() {
             </div>
           </div>
         </div>
-
         <div id="div2">
           <div id="tags">
             {tags.map((tag, index) => (
@@ -81,12 +80,12 @@ function Location() {
         </div>
       </div>
       <div id="logementCollapse">
-        <div>
+        <div className="classCollaps">
           <Collapse title="Description" className="collapse">
-            <div>{description}</div>
+            {description}
           </Collapse>
         </div>
-        <div>
+        <div className="classCollaps">
           <Collapse title="Equipements" className="collapse">
             <ul>
               {equipments.map((equipment, index) => (

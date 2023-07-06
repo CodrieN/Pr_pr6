@@ -7,17 +7,17 @@ function Header() {
   return (
     <header>
       <nav>
-        <NavLink exact to="/" className="logo-link">
+        <NavLink to="/" className="logo-link">
           <h1>
             <span>K</span><img alt="" src={logo} width="50" />
             <span>sa</span>
           </h1>
         </NavLink>
         <div className="divNav">
-          <NavLink exact to="/" activeClassName="active-link">
+          <NavLink to="/" className="active-link">
             Accueil
           </NavLink>
-          <NavLink exact to="/apropos" activeClassName="active-link">
+          <NavLink to="/apropos" className="active-link">
             A Propos
           </NavLink>
         </div>
