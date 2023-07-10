@@ -8,7 +8,6 @@
   margin: 0px;
 }
 
-
 button {
   display: flex;
   align-items: center;
@@ -50,24 +49,21 @@ button {
   color: rgba(255, 96, 96, 1);
   animation: slideInAnimation 0.5s forwards;
   z-index: -1;
+  margin-top: -1.5rem;
 
   .hidden {
     display: none;
   }
 }
 
-// .slide-in {
-// animation-delay: 0.2s;
-// }
-
 .slide-out {
   animation: slideOutAnimation 0.5s forwards;
 }
 
-// .children {
-//   animation: slideInAnimation 0.1s forwards;
-//   animation-delay: 0.3s;
-// }
+
+.children ul {
+  list-style-type: none;
+}
 
 @keyframes slideInAnimation {
   0% {
@@ -98,12 +94,17 @@ button {
   }
 }
 
-
-
-// padding: 1rem; padding-top: 2rem; 
-// font-size: x-large; display: flex; width: 100%; 
-// background-color: rgb(246, 246, 246); 
-// overflow: hidden; color: rgb(255, 96, 96);
-// animation: slideInAnimation 0.5s forwards; 
-// z-index: -1; margin-top: -2rem; }
-
+@media (max-width: 630px) {
+  button {
+    font-size: medium;
+    height: 50px;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  #collapseWrapper {
+    width: 100%;
+  }
+  .divCol {
+    font-size: small;
+  }
+}

@@ -1,4 +1,4 @@
-#section1 {
+.section1 {
     position: relative;
   
     #img0 {
@@ -21,8 +21,8 @@
     text-align: center;
   }
   
-  @media (max-width: 480px) {
-    #section1 {
+  @media (max-width: 630px) {
+    .section1 {
       #img0 {
         height: 110px;
 

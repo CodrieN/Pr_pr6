@@ -13,9 +13,16 @@ $primary-rgb: 255 96 96;
   border-radius: 10px;
 }
 
+#divInit {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
 #div1 {
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: baseline;
   margin-block: 2rem;
   margin: 0%;
@@ -69,13 +76,19 @@ $primary-rgb: 255 96 96;
 }
 
 #div2 {
-  width: 100%;
+  width: 30%;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   margin-block: 2rem;
   margin: 0%;
+}
+
+#tags {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .tag {
@@ -95,30 +108,67 @@ $primary-rgb: 255 96 96;
 .ic_pink {
   margin-left: 1rem;
 }
+#logementStars {
+  display: flex;
+  flex-wrap: nowrap;
+}
 
 #logementCollapse {
   margin-top: 3rem;
   display: flex;
   justify-content: space-between;
- }
-
-.classCollaps{
-width: 40%;
 }
 
-@media (max-width: 480px) {
+.classCollaps {
+  width: 40%;
+}
+
+@media (max-width: 630px) {
   i {
     font-size: 20px;
     margin-bottom: 0.1rem;
   }
-  #divInit{
+  #divInit {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  #div1, #div2, #tags {
+  #div1,
+  #div2,
+  #tags {
     font-size: 20px;
+  }
 
+  #logementLocation {
+    width: 100%;
+    font-size: x-large;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .tag {
+    font-size: small;
+    padding-inline: 3rem;
+    padding-block: 0.5rem;
+    margin-right: 0.5rem;
+  }
+
+  #logementCollapse {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  #div2 {
+    width: 100%;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .classCollaps {
+    width: 80%;
   }
 }

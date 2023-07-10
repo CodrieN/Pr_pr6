@@ -24,7 +24,7 @@ function Slideshow({ pictures }) {
   const showButtons = pictures.length > 1; // Only show the buttons if there are more than one picture
 
   return (
-    <section id="section1">
+    <section className="section1">
       <img id="slideshow-img" alt="Slideshow" src={pictures[currentImgIndex]} />
       {showButtons && (
         <>

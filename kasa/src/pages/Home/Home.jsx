@@ -6,7 +6,7 @@ import "./Home.scss";
 function Home() {
   return (
     <>
-      <section id="section1">
+      <section className="section1">
         <Banner
           imgSrc="/img/Plage.png"
           imgId="img0"

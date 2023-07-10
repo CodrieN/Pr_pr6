@@ -3,7 +3,7 @@ import "./Banner.scss";
 
 function Banner({ imgSrc, imgId, imgAlt, partoutText }) {
   return (
-    <section id="section1">
+    <section>
       <img id={imgId} alt={imgAlt} src={imgSrc} />
       <div id="partout">{partoutText}</div>
     </section>

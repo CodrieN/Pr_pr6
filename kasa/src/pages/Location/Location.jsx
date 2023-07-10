@@ -50,20 +50,21 @@ function Location() {
             <span id="logementTitle">{title}</span>
             {location}
           </div>
-          <div id="logementHost">
-            <div id="logementHostName">{host.name}</div>
-            <div>
-              <img src={host.picture} alt="hostPicture" />
-            </div>
-          </div>
-        </div>
-        <div id="div2">
+
           <div id="tags">
             {tags.map((tag, index) => (
               <span className="tag" key={index}>
                 {tag}
               </span>
             ))}
+          </div>
+        </div>
+        <div id="div2">
+          <div id="logementHost">
+            <div id="logementHostName">{host.name}</div>
+            <div>
+              <img src={host.picture} alt="hostPicture" />
+            </div>
           </div>
           <div id="logementStars">
             {Array.from({ length: 5 }, (_, index) => (

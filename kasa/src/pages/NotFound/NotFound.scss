@@ -26,9 +26,11 @@ font-weight: 700;
   color: rgb($primary-rgb);
   font-size: 50px;
   margin-block: 1rem;
+  display: flex;
+  justify-content: center;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 630px) {
   #nfSection {
     #_404 {
       font-size: 200px;

@@ -8,10 +8,7 @@ function Header() {
     <header>
       <nav>
         <NavLink to="/" className="logo-link">
-          <h1>
-            <span>K</span><img alt="" src={logo} width="50" />
-            <span>sa</span>
-          </h1>
+          <img alt="" src={logo} width="50" />
         </NavLink>
         <div className="divNav">
           <NavLink to="/" className="active-link">
