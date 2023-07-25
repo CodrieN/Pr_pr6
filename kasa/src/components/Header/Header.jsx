@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import "./Header.scss";
 
 function Header() {
-  const logo = "img/Kasa.jpg";
+  const logo = "../img/Kasa.jpg";
   return (
     <header>
       <nav>
